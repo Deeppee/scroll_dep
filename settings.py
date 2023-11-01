@@ -10,3 +10,7 @@ gwei = 15
 
 #time to sleep until next gwei check
 time_to_sleep = 30
+
+#time to next deploy in seconds
+min_time = 50
+max_time = 150
