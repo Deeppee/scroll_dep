@@ -5,7 +5,7 @@ import string
 import time
 from web3 import Web3
 from solcx import compile_source, set_solc_version, install_solc
-from settings import rpc_scroll, rpc_eth, gwei, time_to_sleep
+from settings import rpc_scroll, rpc_eth, gwei, time_to_sleep, min_time, max_time
 
 w3 = Web3(Web3.HTTPProvider(rpc_scroll))
 w3_eth = Web3(Web3.HTTPProvider(rpc_eth))
@@ -92,4 +92,8 @@ with open("pks.txt", "r") as f:
 
         print(f"Contract Deployed At: {transaction_receipt['contractAddress']}")
         print(f"Tx hash: {link}{transaction_hash.hex()}")
+
+        tt = random.randint(min_time, max_time)
+        print(f'Next address in: {tt} sec')
+        time.sleep(tt)
 
